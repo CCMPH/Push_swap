@@ -6,7 +6,7 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 15:03:17 by chartema      #+#    #+#                 */
-/*   Updated: 2022/03/10 15:03:19 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/15 11:57:13 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst != NULL)
 	{
-		f(lst -> content);
+		f(lst -> value);
 		lst = lst -> next;
 	}
 }

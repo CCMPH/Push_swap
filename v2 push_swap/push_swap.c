@@ -6,95 +6,48 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/07 13:12:55 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/07 13:14:35 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/15 13:31:00 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //nodig voor printf
 
-void	check_number(char *str)
+// Writes the given error message and exit the program
+void	ft_error(char *error)
 {
-	int		i;
-	long	nr;
-
-	i = 0;
-	if (!str[i])
-		//ERROR
-	while (str[i])
-	{
-		nr = ft_atoi(str[i]);
-		if (nr > INT_MAX || nr < INT_MIN)
-			//ERROR
-		i++;
-	}
+	write(1, error, ft_strlen(error));
+	exit (1);
 }
 
-// Checks if there are dublicates KORTER MAKEN!!
-void	check_dublicates(int ac, char **av)
+int	what_is_happening(t_list *list_a, t_list *list_b)
 {
-	int	i;
-	int	j;
-	int	*array;
-
-	i = 0;
-	array = malloc(sizeof(int) * ac - 1);
-	if (!array)
-		//ERROR
-	while (i < ac - 1)
+	while (list_a != NULL)
 	{
-		array[i] = ft_atoi(av[i]);
-		i++;
+		printf("List a: %ld\n", list_a->value);
+		list_a = list_a->next;
 	}
-	i = 0
-	j = 1;
-	while (i < ac - 1)
+	while (list_b != NULL)
 	{
-		while (j < ac)
-		{
-			if (array[i] == array[j])
-				//ERROR
-			j++;
-		}
-		i++;
-		j = i + 1;
+		printf("list b: %ld\n", list_b->value);
+		list_b = list_b->next;
 	}
-	free(array);
-}
-
-// Checks if the input is correct
-// * More than 1 argument GEBEURD DIT??
-// * All arguments must be integers
-// * No duplicates
-void	check_input(int ac, char **av)
-{
-	int	i;
-	int	arguments;
-	int	*array;
-
-	i = 1;
-	arguments = ac - 1;
-	while (i < arguments)
-	{
-		check_number(av[i]);
-		i++;
-	}
-	check_dublicates(ac, av);
+	return (0);
 }
 
 int	main(int ac, char **av)
 {
-	t_stack	*list_a;
-	t_stack	*list_b;
+	t_list	*list_a;
+	t_list	*list_b;
 
 	if (ac == 1 ||!av)
 		return (0);
 	list_a = NULL;
 	list_b = NULL;
-
-	check_input(ac, av);
+	parse_input(&list_a, ac, av);
+	what_is_happening(list_a, list_b);
+	sorting_machine(&list_a, ac);
+	what_is_happening(list_a, list_b);
+	//system("leaks push_swap");
 	return (0);
-	}
-
-	// https://github.com/pderksen98/push_swap/blob/master/src/error.c
-	// https://github.com/rvan-mee/push_swap/blob/master/src/mandatory/main.c
-	
+}
