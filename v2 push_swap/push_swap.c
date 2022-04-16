@@ -6,7 +6,7 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/07 13:12:55 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/15 13:31:00 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/16 13:27:47 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ void	ft_error(char *error)
 
 int	what_is_happening(t_list *list_a, t_list *list_b)
 {
+	printf("\n");
 	while (list_a != NULL)
 	{
 		printf("List a: %ld\n", list_a->value);
 		list_a = list_a->next;
 	}
+	printf("\n");
 	while (list_b != NULL)
 	{
 		printf("list b: %ld\n", list_b->value);
@@ -46,7 +48,7 @@ int	main(int ac, char **av)
 	list_b = NULL;
 	parse_input(&list_a, ac, av);
 	what_is_happening(list_a, list_b);
-	sorting_machine(&list_a, ac);
+	sorting_machine(&list_a, &list_b, ac);
 	what_is_happening(list_a, list_b);
 	//system("leaks push_swap");
 	return (0);

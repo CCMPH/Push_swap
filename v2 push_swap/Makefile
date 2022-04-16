@@ -5,7 +5,7 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 LIBFT = libft.a
 
-FILES = push_swap.c parse.c sorting.c check.c moves.c
+FILES = push_swap.c parse.c sorting.c sort_big.c check.c moves.c
 
 OBJS = $(FILES:.c=.o)
 
