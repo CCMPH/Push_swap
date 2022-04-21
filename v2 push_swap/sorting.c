@@ -6,36 +6,12 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/15 10:01:04 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/16 15:03:22 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 10:31:08 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> //nodig voor printf
-
-int	find_pos_lowest(t_list **list_a)
-{
-	int		i;
-	int		lowest;
-	t_list	*temp;
-
-	i = 1;
-	temp = *list_a;
-	lowest = temp->value;
-	while (temp != NULL)
-	{
-		if (temp->value < lowest)
-			lowest = temp->value;
-		temp = temp->next;
-	}
-	temp = *list_a;
-	while (temp->value != lowest)
-	{
-		i++;
-		temp = temp->next;
-	}
-	return (i);
-}
 
 void	sort_two(t_list **list_a)
 {
@@ -129,7 +105,6 @@ void	sorting_machine(t_list **list_a, t_list **list_b, int ac)
 	arguments = ac - 1;
 	if (check_if_sorted(list_a))
 	{
-		//printf("is sorted: Nee\n");
 		if (arguments == 2)
 			sort_two(list_a);
 		else if (arguments == 3)
@@ -139,6 +114,6 @@ void	sorting_machine(t_list **list_a, t_list **list_b, int ac)
 		else if (arguments == 5)
 			sort_five(list_a, list_b);
 		else
-			sort_big(list_a);
+			sort_big(list_a, list_b, ac);
 	}
 }

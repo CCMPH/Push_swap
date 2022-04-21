@@ -6,7 +6,7 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/15 13:11:08 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/16 13:30:14 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 10:32:34 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	swap_a(t_list **list_a)
 	temp2->next = temp1;
 	*list_a = temp2;
 	write(1, "sa\n", 3);
-	// Zijn de if statements nodig?
 }
 
 void	rotate_a(t_list **list_a)

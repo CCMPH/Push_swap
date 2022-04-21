@@ -6,14 +6,35 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/15 11:06:38 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/16 09:50:27 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 10:31:26 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //nodig voor printf
 
+int	find_pos_lowest(t_list **list_a)
+{
+	int		i;
+	int		lowest;
+	t_list	*temp;
 
+	i = 1;
+	temp = *list_a;
+	lowest = temp->value;
+	while (temp != NULL)
+	{
+		if (temp->value < lowest)
+			lowest = temp->value;
+		temp = temp->next;
+	}
+	temp = *list_a;
+	while (temp->value != lowest)
+	{
+		i++;
+		temp = temp->next;
+	}
+	return (i);
+}
 
 int	check_if_sorted(t_list **list)
 {
