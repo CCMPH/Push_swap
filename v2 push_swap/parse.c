@@ -6,7 +6,7 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/12 09:30:55 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 13:58:32 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 15:12:39 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,20 @@ int	check_number(char *str)
 	return (ft_atoi_push_swap(str));
 }
 
-void	check_duplicates(int ac, char **av)
+void	check_duplicates(t_list *list)
 {
-	int	i;
-	int	j;
+	t_list	*temp;
 
-	i = 0;
-	j = 1;
-	while (i < ac - 1)
+	while (list != NULL)
 	{
-		while (j < ac)
+		temp = list->next;
+		while (temp != NULL)
 		{
-			if (av[i] == av[j])
+			if (list->value == temp->value)
 				ft_error("Error\n");
-			j++;
+			temp = temp->next;
 		}
-		i++;
-		j = i + 1;
+		list = list->next;
 	}
 }
 

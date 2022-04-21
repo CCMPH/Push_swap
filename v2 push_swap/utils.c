@@ -6,13 +6,12 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/21 12:42:09 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 14:15:55 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 15:11:32 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
-#include <stdio.h> //nodig voor NULL
+#include <limits.h> //nodig voor NULL
 
 int	ft_strlen(const char *s)
 {

@@ -6,12 +6,12 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/21 12:52:16 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 13:55:08 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 15:11:41 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> //nodig voor NULL
+#include <limits.h> //nodig voor NULL
 #include <stdlib.h> //nodig voor malloc
 
 t_list	*ft_lstlast(t_list *lst)
