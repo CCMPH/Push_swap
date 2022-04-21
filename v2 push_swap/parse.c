@@ -6,20 +6,20 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/12 09:30:55 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 10:30:35 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 13:58:32 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //nodig voor NULL
 
-long	check_number(char *str)
+int	check_number(char *str)
 {
 	int		i;
-	long	number;
 
 	i = 0;
 	if (!str)
-		ft_error("Error1\n");
+		ft_error("Error\n");
 	if (str[0] == '-')
 		i++;
 	while (str[i])
@@ -28,10 +28,7 @@ long	check_number(char *str)
 			ft_error("Error\n");
 		i++;
 	}
-	number = ft_atoi(str);
-	if (number > 2147483647 || number < -2147483647)
-		ft_error("Error\n");
-	return (number);
+	return (ft_atoi_push_swap(str));
 }
 
 void	check_duplicates(int ac, char **av)

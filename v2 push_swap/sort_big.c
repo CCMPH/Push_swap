@@ -6,11 +6,12 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/16 15:03:33 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 10:32:24 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 13:40:19 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //nodig voor NULL
 
 int	get_position(t_list **list_a, int input)
 {

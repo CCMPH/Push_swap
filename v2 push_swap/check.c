@@ -6,11 +6,12 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/15 11:06:38 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 10:31:26 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 13:40:38 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //nodig voor NULL
 
 int	find_pos_lowest(t_list **list_a)
 {

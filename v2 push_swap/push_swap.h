@@ -6,14 +6,19 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/07 13:13:53 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 10:33:03 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 13:59:22 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+typedef struct s_list
+{
+	int				value;
+	int				position;
+	struct s_list	*next;
+}				t_list;
 
 // FUNCTIONS
 
@@ -33,6 +38,17 @@ void	rotate_a(t_list **list_a);
 void	reverse_a(t_list **list_a);
 void	push_b(t_list **list_a, t_list **list_b);
 void	push_a(t_list **list_a, t_list **list_b);
+
+//Utils
+int		ft_strlen(const char *s);
+int		ft_isdigit(int c);
+int		ft_atoi_push_swap(const char *str);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(int value);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)());
+void	ft_lstclear(t_list **lst, void (*del)());
 
 // testen
 int		what_is_happening_b(t_list *list_a, t_list *list_b);

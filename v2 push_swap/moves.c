@@ -6,11 +6,13 @@
 /*   By: chartema <chartema@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/15 13:11:08 by chartema      #+#    #+#                 */
-/*   Updated: 2022/04/21 10:32:34 by chartema      ########   odam.nl         */
+/*   Updated: 2022/04/21 13:41:21 by chartema      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> //nodig voor NULL
+#include <unistd.h> //nodig voor write
 
 void	swap_a(t_list **list_a)
 {
